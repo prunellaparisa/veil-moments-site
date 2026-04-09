@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — Veil Moments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --parchment: #f8f3ee;
+        --parchment-deep: #f0e8df;
+        --linen: #e8ddd3;
+        --rose: #c9927a;
+        --rose-dark: #a8705a;
+        --blush: #edd5c8;
+        --ink-dark: #2c2420;
+        --ink-mid: #6b5a52;
+        --ink-light: #9e8a80;
+        --hairline: #ddd0c8;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--parchment);
+        color: var(--ink-mid);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        line-height: 1.7;
+        font-size: 15px;
+        min-height: 100vh;
+      }
+
+      /* ── Header ── */
+      header {
+        border-bottom: 0.5px solid var(--hairline);
+        padding: 28px 24px 24px;
+        text-align: center;
+        background: var(--parchment);
+      }
+
+      .wordmark {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 22px;
+        color: var(--ink-dark);
+        letter-spacing: 0.5px;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .page-label {
+        font-family: "DM Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+      }
+
+      /* ── Layout ── */
+      main {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      /* ── Section headings ── */
+      h2 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        margin-top: 44px;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        border-bottom: 0.5px solid var(--hairline);
+      }
+
+      h2:first-of-type {
+        margin-top: 0;
+      }
+
+      /* ── Body text ── */
+      p {
+        color: var(--ink-mid);
+        font-size: 15px;
+        line-height: 1.75;
+        margin-bottom: 14px;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ── Inline emphasis ── */
+      strong {
+        font-weight: 500;
+        color: var(--ink-dark);
+      }
+
+      /* ── Data table ── */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 6px 0 14px;
+        font-size: 14px;
+      }
+
+      .data-table th {
+        font-family: "DM Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        text-align: left;
+        padding: 10px 14px;
+        background: var(--parchment-deep);
+        border: 0.5px solid var(--hairline);
+      }
+
+      .data-table td {
+        padding: 11px 14px;
+        border: 0.5px solid var(--hairline);
+        color: var(--ink-mid);
+        vertical-align: top;
+        line-height: 1.6;
+      }
+
+      .data-table tr:nth-child(even) td {
+        background: var(--parchment-deep);
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 2px 7px;
+        border: 0.5px solid var(--hairline);
+        color: var(--ink-light);
+        white-space: nowrap;
+      }
+
+      .badge.local {
+        border-color: var(--rose);
+        color: var(--rose);
+      }
+
+      /* ── Highlight box ── */
+      .highlight {
+        background: var(--blush);
+        border: 0.5px solid rgba(201, 146, 122, 0.3);
+        padding: 18px 20px;
+        margin: 6px 0 14px;
+      }
+
+      .highlight p {
+        margin-bottom: 0;
+        font-size: 14px;
+        color: var(--ink-dark);
+      }
+
+      /* ── Contact block ── */
+      .contact-block {
+        background: var(--parchment-deep);
+        border: 0.5px solid var(--hairline);
+        padding: 20px 22px;
+        margin-top: 6px;
+      }
+
+      .contact-block p {
+        margin-bottom: 6px;
+      }
+      .contact-block p:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-block a {
+        color: var(--rose-dark);
+        text-decoration: none;
+        border-bottom: 0.5px solid var(--rose);
+      }
+
+      .contact-block a:hover {
+        color: var(--rose);
+      }
+
+      /* ── Footer ── */
+      footer {
+        border-top: 0.5px solid var(--hairline);
+        padding: 24px;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 12px;
+        color: var(--ink-light);
+        margin-bottom: 0;
+      }
+
+      footer a {
+        color: var(--rose-dark);
+        text-decoration: none;
+        border-bottom: 0.5px solid rgba(168, 112, 90, 0.4);
+      }
+
+      footer a:hover {
+        color: var(--rose);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 520px) {
+        main {
+          padding: 36px 20px 64px;
+        }
+        .data-table {
+          font-size: 13px;
+        }
+        .data-table th,
+        .data-table td {
+          padding: 9px 11px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="wordmark">Veil Moments</span>
+      <span class="page-label">Privacy Policy</span>
+    </header>
+
+    <main>
+      <h2>Overview</h2>
+      <div class="highlight">
+        <p>
+          Veil Moments is designed with your privacy in mind.
+          <strong
+            >We do not collect, store, or share your personal
+            information.</strong
+          >
+          Almost everything the app does stays entirely on your device.
+        </p>
+      </div>
+      <p>
+        This policy explains what data the app uses, where it goes, and what
+        third-party services are involved. It applies to the Veil Moments app on
+        iOS and Android.
+      </p>
+      <p>Last updated: <strong>April 2026</strong></p>
+
+      <h2>Data stored on your device</h2>
+      <p>
+        The following information is saved locally in the app's private storage
+        on your device. It is never transmitted to us and is deleted when you
+        uninstall the app.
+      </p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Purpose</th>
+            <th>Where</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mood selections</td>
+            <td>Show relevant quotes; mood history &amp; streak (Pro)</td>
+            <td><span class="badge local">On device only</span></td>
+          </tr>
+          <tr>
+            <td>Saved quotes</td>
+            <td>Your personal collection of saved quotes</td>
+            <td><span class="badge local">On device only</span></td>
+          </tr>
+          <tr>
+            <td>Notification preferences</td>
+            <td>Schedule your morning, midday, and evening notifications</td>
+            <td><span class="badge local">On device only</span></td>
+          </tr>
+          <tr>
+            <td>Tone filter preference</td>
+            <td>Filter quotes by tone (Pro feature)</td>
+            <td><span class="badge local">On device only</span></td>
+          </tr>
+          <tr>
+            <td>Quote cache</td>
+            <td>Store downloaded quotes for offline use</td>
+            <td><span class="badge local">On device only</span></td>
+          </tr>
+          <tr>
+            <td>Pro subscription status</td>
+            <td>Unlock Pro features after purchase</td>
+            <td><span class="badge local">On device only</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Quote content</h2>
+      <p>
+        The app fetches wellness quotes from our own backend server. When
+        requesting quotes, your device sends your selected
+        <strong>mood</strong> (struggling, neutral, or thriving) as a query
+        parameter so relevant quotes can be returned. No personally identifiable
+        information is included in these requests, and we do not log or store
+        individual request data on our servers.
+      </p>
+
+      <h2>In-app purchases</h2>
+      <p>
+        Veil Moments Pro is available as a monthly subscription processed
+        entirely through the <strong>Apple App Store</strong> or
+        <strong>Google Play Store</strong>. We do not handle, see, or store your
+        payment information. All billing, receipts, and subscription management
+        are handled by Apple or Google under their respective privacy policies.
+      </p>
+      <p>Your subscription status is stored locally on your device only.</p>
+
+      <h2>Advertising (free version)</h2>
+      <p>
+        The free version of Veil Moments displays ads provided by
+        <strong>Google AdMob</strong>. AdMob may use device identifiers and
+        usage data to serve relevant ads. This is governed by
+        <a
+          href="https://policies.google.com/privacy"
+          style="
+            color: var(--rose-dark);
+            border-bottom: 0.5px solid var(--rose);
+            text-decoration: none;
+          "
+          >Google's Privacy Policy</a
+        >.
+      </p>
+      <p>
+        <strong>Veil Moments Pro subscribers see no ads.</strong> AdMob is not
+        initialised for Pro users.
+      </p>
+      <p>
+        You can opt out of personalised ads at any time through your device
+        settings: <em>Settings → Privacy → Tracking</em> on iOS, or
+        <em>Settings → Google → Ads</em> on Android.
+      </p>
+
+      <h2>Notifications</h2>
+      <p>
+        If you grant notification permission, the app schedules local
+        notifications on your device to deliver quotes at your chosen times.
+        These notifications are generated entirely on-device — no data is sent
+        to our servers to trigger them. You can disable notifications at any
+        time in your device settings.
+      </p>
+
+      <h2>No account required</h2>
+      <p>
+        Veil Moments does not require you to create an account, and we do not
+        collect your name, email address, or any other identifying information.
+        There is no login, no profile, and no data associated with you as an
+        individual.
+      </p>
+
+      <h2>Children's privacy</h2>
+      <p>
+        Veil Moments is not directed at children under the age of 13. We do not
+        knowingly collect personal information from children. If you believe a
+        child has provided personal information through the app, please contact
+        us and we will address it promptly.
+      </p>
+
+      <h2>Data retention &amp; deletion</h2>
+      <p>
+        Because all personal data is stored on your device, you are in full
+        control. Uninstalling the app removes all locally stored data. There is
+        no account to delete and no data held on our servers associated with
+        you.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        We may update this privacy policy from time to time. Any changes will be
+        reflected on this page with an updated date at the top. Continued use of
+        the app after changes are posted constitutes acceptance of the revised
+        policy.
+      </p>
+
+      <h2>Contact</h2>
+      <div class="contact-block">
+        <p>
+          If you have any questions about this privacy policy or how Veil
+          Moments handles data, please get in touch.
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:hello@veilapp.com">hello@veilapp.com</a>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 Veil Moments &nbsp;·&nbsp; <a href="support.html">Support</a>
+      </p>
+    </footer>
+  </body>
+</html>

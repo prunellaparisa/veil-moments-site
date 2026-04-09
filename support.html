@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support — Veil Moments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --parchment: #f8f3ee;
+        --parchment-deep: #f0e8df;
+        --linen: #e8ddd3;
+        --rose: #c9927a;
+        --rose-dark: #a8705a;
+        --blush: #edd5c8;
+        --ink-dark: #2c2420;
+        --ink-mid: #6b5a52;
+        --ink-light: #9e8a80;
+        --hairline: #ddd0c8;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--parchment);
+        color: var(--ink-mid);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        line-height: 1.7;
+        font-size: 15px;
+        min-height: 100vh;
+      }
+
+      /* ── Header ── */
+      header {
+        border-bottom: 0.5px solid var(--hairline);
+        padding: 28px 24px 24px;
+        text-align: center;
+        background: var(--parchment);
+      }
+
+      .wordmark {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 22px;
+        color: var(--ink-dark);
+        letter-spacing: 0.5px;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .page-label {
+        font-family: "DM Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+      }
+
+      /* ── Layout ── */
+      main {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      /* ── Section headings ── */
+      h2 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        margin-top: 44px;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        border-bottom: 0.5px solid var(--hairline);
+      }
+
+      h2:first-of-type {
+        margin-top: 0;
+      }
+
+      /* ── Body text ── */
+      p {
+        color: var(--ink-mid);
+        font-size: 15px;
+        line-height: 1.75;
+        margin-bottom: 14px;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      strong {
+        font-weight: 500;
+        color: var(--ink-dark);
+      }
+
+      /* ── FAQ accordion ── */
+      .faq-item {
+        border: 0.5px solid var(--hairline);
+        margin-bottom: -0.5px;
+      }
+
+      .faq-item:first-of-type {
+        /* no extra styles needed */
+      }
+
+      .faq-question {
+        width: 100%;
+        background: var(--parchment-deep);
+        border: none;
+        cursor: pointer;
+        padding: 16px 20px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ink-dark);
+        line-height: 1.5;
+        transition: background 0.15s;
+      }
+
+      .faq-question:hover {
+        background: var(--linen);
+      }
+
+      .faq-question.open {
+        background: var(--blush);
+      }
+
+      .faq-icon {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        border: 0.5px solid var(--rose);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+      }
+
+      .faq-question.open .faq-icon {
+        transform: rotate(45deg);
+      }
+
+      .faq-icon::before,
+      .faq-icon::after {
+        content: "";
+        position: absolute;
+        background: var(--rose);
+      }
+
+      .faq-icon {
+        position: relative;
+      }
+
+      .faq-icon::before {
+        width: 1px;
+        height: 8px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .faq-icon::after {
+        width: 8px;
+        height: 1px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .faq-answer {
+        display: none;
+        padding: 14px 20px 18px;
+        font-size: 14px;
+        color: var(--ink-mid);
+        line-height: 1.7;
+        background: var(--parchment);
+        border-top: 0.5px solid var(--hairline);
+      }
+
+      .faq-answer.open {
+        display: block;
+      }
+
+      .faq-answer p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .faq-answer p:last-child {
+        margin-bottom: 0;
+      }
+
+      .faq-answer a {
+        color: var(--rose-dark);
+        text-decoration: none;
+        border-bottom: 0.5px solid var(--rose);
+      }
+
+      /* ── Contact card ── */
+      .contact-card {
+        background: var(--parchment-deep);
+        border: 0.5px solid var(--hairline);
+        padding: 28px 24px;
+        text-align: center;
+        margin-top: 6px;
+      }
+
+      .contact-card .tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 18px;
+        color: var(--ink-dark);
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .contact-card p {
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+
+      .contact-button {
+        display: inline-block;
+        background: var(--rose);
+        color: #fff;
+        font-family: "DM Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        padding: 12px 28px;
+        text-decoration: none;
+        transition: background 0.15s;
+      }
+
+      .contact-button:hover {
+        background: var(--rose-dark);
+      }
+
+      /* ── Info rows ── */
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 13px 16px;
+        border: 0.5px solid var(--hairline);
+        margin-bottom: -0.5px;
+        font-size: 14px;
+      }
+
+      .info-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-label {
+        color: var(--ink-light);
+      }
+      .info-value {
+        color: var(--ink-dark);
+        font-weight: 500;
+      }
+
+      .info-value a {
+        color: var(--rose-dark);
+        text-decoration: none;
+        border-bottom: 0.5px solid rgba(168, 112, 90, 0.4);
+      }
+
+      /* ── Highlight ── */
+      .highlight {
+        background: var(--blush);
+        border: 0.5px solid rgba(201, 146, 122, 0.3);
+        padding: 18px 20px;
+        margin: 6px 0 14px;
+      }
+
+      .highlight p {
+        margin-bottom: 0;
+        font-size: 14px;
+        color: var(--ink-dark);
+      }
+
+      /* ── Footer ── */
+      footer {
+        border-top: 0.5px solid var(--hairline);
+        padding: 24px;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 12px;
+        color: var(--ink-light);
+        margin-bottom: 0;
+      }
+
+      footer a {
+        color: var(--rose-dark);
+        text-decoration: none;
+        border-bottom: 0.5px solid rgba(168, 112, 90, 0.4);
+      }
+
+      footer a:hover {
+        color: var(--rose);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 520px) {
+        main {
+          padding: 36px 20px 64px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="wordmark">Veil Moments</span>
+      <span class="page-label">Support</span>
+    </header>
+
+    <main>
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          Why am I not receiving notifications?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            First, check that notifications are enabled for Veil Moments in your
+            device settings:
+            <strong
+              >Settings → Veil Moments → Notifications → Allow
+              Notifications</strong
+            >.
+          </p>
+          <p>
+            Then open the app and make sure at least one notification slot
+            (morning, midday, or evening) is toggled on in the Settings screen.
+            Opening the app regularly also keeps your quotes fresh —
+            notifications use locally cached content.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          How do I cancel my Veil Moments Pro subscription?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Subscriptions are managed directly through Apple or Google — we
+            don't handle billing ourselves.
+          </p>
+          <p>
+            <strong>On iPhone:</strong> Settings → [your name] → Subscriptions →
+            Veil Moments → Cancel Subscription.
+          </p>
+          <p>
+            <strong>On Android:</strong> Google Play → tap your profile icon →
+            Payments & subscriptions → Subscriptions → Veil Moments → Cancel.
+          </p>
+          <p>
+            You'll keep access to Pro features until the end of your current
+            billing period.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          I purchased Pro but the app still shows the free version.
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Go to Settings inside the app and tap
+            <strong>Restore Purchase</strong>. This re-links your App Store or
+            Play Store purchase to the app on your current device.
+          </p>
+          <p>
+            If restoring doesn't work, try force-closing the app and reopening
+            it. If you're still having trouble, please contact us at
+            <a href="mailto:hello@veilapp.com">hello@veilapp.com</a> with your
+            order number.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          How do I request a refund?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Refunds are handled by Apple or Google, not by us directly.</p>
+          <p>
+            <strong>Apple:</strong> Visit
+            <a href="https://reportaproblem.apple.com" target="_blank"
+              >reportaproblem.apple.com</a
+            >, sign in, and select the Veil Moments subscription to request a
+            refund.
+          </p>
+          <p>
+            <strong>Google:</strong> Open Google Play → tap your profile →
+            Payments & subscriptions → Budget & history → find the charge → tap
+            Report a problem.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          What's included in Veil Moments Pro?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Pro unlocks the full experience: unlimited quotes per day, tone
+            filter (grounding, energising, comforting, ambitious), mood history
+            and streak tracking, unlimited saved quotes, a custom evening
+            notification slot, and no sponsored moments.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          The app isn't loading any quotes.
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            On first launch, Veil Moments downloads a set of quotes — this
+            requires an internet connection. If the download failed, quotes from
+            the built-in library will appear instead.
+          </p>
+          <p>
+            Try closing and reopening the app with a stable internet connection.
+            If quotes still don't load, please contact us and we'll look into
+            it.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggle(this)">
+          How do I delete my data?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            All your data — mood history, saved quotes, preferences — is stored
+            locally on your device only. Uninstalling the app removes everything
+            completely. We don't hold any personal data on our servers, so
+            there's nothing to request deletion of.
+          </p>
+        </div>
+      </div>
+
+      <h2>App information</h2>
+
+      <div class="info-row">
+        <span class="info-label">Current version</span>
+        <span class="info-value">1.0.0</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Platform</span>
+        <span class="info-value">iOS &amp; Android</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Privacy policy</span>
+        <span class="info-value"><a href="privacy.html">View policy</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Contact</span>
+        <span class="info-value"
+          ><a href="mailto:hello@veilapp.com">hello@veilapp.com</a></span
+        >
+      </div>
+
+      <h2>Still need help?</h2>
+
+      <div class="contact-card">
+        <span class="tagline">We're here for you.</span>
+        <p>
+          If your question isn't answered above, send us a message and we'll get
+          back to you as soon as we can — usually within 1–2 business days.
+        </p>
+        <a href="mailto:hello@veilapp.com" class="contact-button"
+          >Email support</a
+        >
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 Veil Moments &nbsp;·&nbsp;
+        <a href="privacy.html">Privacy Policy</a>
+      </p>
+    </footer>
+
+    <script>
+      function toggle(btn) {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains("open");
+        // Close all
+        document.querySelectorAll(".faq-question.open").forEach((q) => {
+          q.classList.remove("open");
+          q.nextElementSibling.classList.remove("open");
+        });
+        // Open this one if it was closed
+        if (!isOpen) {
+          btn.classList.add("open");
+          answer.classList.add("open");
+        }
+      }
+    </script>
+  </body>
+</html>

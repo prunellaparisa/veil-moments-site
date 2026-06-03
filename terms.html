@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Use — Veil Moments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --parchment: #f8f3ee;
+        --parchment-deep: #f0e8df;
+        --linen: #e8ddd3;
+        --rose: #c9927a;
+        --rose-dark: #a8705a;
+        --blush: #edd5c8;
+        --ink-dark: #2c2420;
+        --ink-mid: #6b5a52;
+        --ink-light: #9e8a80;
+        --hairline: #ddd0c8;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--parchment);
+        color: var(--ink-mid);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        line-height: 1.7;
+        font-size: 15px;
+        min-height: 100vh;
+      }
+
+      /* ── Header ── */
+      header {
+        border-bottom: 0.5px solid var(--hairline);
+        padding: 28px 24px 24px;
+        text-align: center;
+        background: var(--parchment);
+      }
+
+      .wordmark {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 22px;
+        color: var(--ink-dark);
+        letter-spacing: 0.5px;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .page-label {
+        font-family: "DM Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+      }
+
+      /* ── Layout ── */
+      main {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      /* ── Section headings ── */
+      h2 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        margin-top: 44px;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        border-bottom: 0.5px solid var(--hairline);
+      }
+
+      h2:first-of-type {
+        margin-top: 0;
+      }
+
+      /* ── Body text ── */
+      p {
+        color: var(--ink-mid);
+        font-size: 15px;
+        line-height: 1.75;
+        margin-bottom: 14px;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ── Inline emphasis ── */
+      strong {
+        font-weight: 500;
+        color: var(--ink-dark);
+      }
+
+      /* ── Highlight box ── */
+      .highlight {
+        background: var(--blush);
+        border: 0.5px solid rgba(201, 146, 122, 0.3);
+        padding: 18px 20px;
+        margin: 6px 0 14px;
+      }
+
+      .highlight p {
+        margin-bottom: 0;
+        font-size: 14px;
+        color: var(--ink-dark);
+      }
+
+      /* ── Contact block ── */
+      .contact-block {
+        background: var(--parchment-deep);
+        border: 0.5px solid var(--hairline);
+        padding: 20px 22px;
+        margin-top: 6px;
+      }
+
+      .contact-block p {
+        margin-bottom: 6px;
+      }
+
+      .contact-block p:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-block a {
+        color: var(--rose-dark);
+        text-decoration: none;
+        border-bottom: 0.5px solid var(--rose);
+      }
+
+      .contact-block a:hover {
+        color: var(--rose);
+      }
+
+      /* ── Inline links ── */
+      a {
+        color: var(--rose-dark);
+        text-decoration: none;
+        border-bottom: 0.5px solid var(--rose);
+      }
+
+      a:hover {
+        color: var(--rose);
+      }
+
+      /* ── Store badge row ── */
+      .store-row {
+        display: flex;
+        gap: 10px;
+        margin: 6px 0 14px;
+        flex-wrap: wrap;
+      }
+
+      .store-badge {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border: 0.5px solid var(--hairline);
+        color: var(--ink-light);
+        background: var(--parchment-deep);
+      }
+
+      /* ── Footer ── */
+      footer {
+        border-top: 0.5px solid var(--hairline);
+        padding: 24px;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 12px;
+        color: var(--ink-light);
+        margin-bottom: 0;
+      }
+
+      footer a {
+        color: var(--rose-dark);
+        text-decoration: none;
+        border-bottom: 0.5px solid rgba(168, 112, 90, 0.4);
+      }
+
+      footer a:hover {
+        color: var(--rose);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 520px) {
+        main {
+          padding: 36px 20px 64px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="wordmark">Veil Moments</span>
+      <span class="page-label">Terms of Use</span>
+    </header>
+
+    <main>
+      <h2>Overview</h2>
+      <div class="highlight">
+        <p>
+          By downloading or using Veil Moments, you agree to these terms. Please
+          read them — they're written to be straightforward, not to obscure
+          anything.
+        </p>
+      </div>
+      <p>
+        These Terms of Use govern your use of the Veil Moments mobile
+        application (the "App"), available on iOS and Android. The App is
+        operated by
+        <strong>Veil Moments</strong> ("we", "us", or "our").
+      </p>
+      <p>Last updated: <strong>June 2026</strong></p>
+
+      <h2>Acceptance of terms</h2>
+      <p>
+        By accessing or using the App, you confirm that you are at least
+        <strong>13 years of age</strong> and agree to be bound by these Terms.
+        If you do not agree, please do not use the App.
+      </p>
+      <p>
+        If you are using the App on behalf of an organisation, you represent
+        that you have authority to bind that organisation to these Terms.
+      </p>
+
+      <h2>Use of the app</h2>
+      <p>
+        You may use the App for your own personal, non-commercial purposes. You
+        agree not to:
+      </p>
+      <p>
+        — copy, modify, or distribute the App or its content without our written
+        permission;<br />
+        — reverse-engineer or attempt to extract the source code;<br />
+        — use the App in any way that violates applicable laws or
+        regulations;<br />
+        — interfere with or disrupt the App or servers connected to it.
+      </p>
+
+      <h2>Subscriptions &amp; in-app purchases</h2>
+      <p>
+        Veil Moments offers an optional auto-renewing subscription,
+        <strong>Veil Moments Pro</strong>, which unlocks additional features.
+      </p>
+      <div class="store-row">
+        <span class="store-badge">iOS — Apple App Store</span>
+        <span class="store-badge">Android — Google Play Store</span>
+      </div>
+      <p>
+        <strong>Subscription details:</strong> Veil Moments Pro is billed
+        monthly at the price displayed at the time of purchase in your local
+        currency. The subscription renews automatically at the end of each
+        billing period unless cancelled at least 24 hours before the renewal
+        date.
+      </p>
+      <p>
+        <strong>Free trial:</strong> If a free trial is offered, any unused
+        portion is forfeited when you purchase a subscription.
+      </p>
+      <p>
+        <strong>Cancellation:</strong> You may cancel at any time through your
+        Apple ID or Google Play account settings. Access to Pro features
+        continues until the end of the current billing period. We do not issue
+        refunds for partial billing periods.
+      </p>
+      <p>
+        <strong>Price changes:</strong> We may change the subscription price
+        with reasonable notice. Continued use after a price change takes effect
+        constitutes acceptance of the new price.
+      </p>
+      <p>
+        All billing is handled by Apple or Google under their respective terms.
+        We do not process or store your payment information.
+      </p>
+
+      <h2>Refunds</h2>
+      <p>
+        Refund requests are handled directly by Apple or Google, not by us. To
+        request a refund:
+      </p>
+      <p>
+        <strong>Apple:</strong> Visit
+        <a href="https://reportaproblem.apple.com" target="_blank"
+          >reportaproblem.apple.com</a
+        >.<br />
+        <strong>Google:</strong> Open Google Play → your profile → Payments
+        &amp; subscriptions → Budget &amp; history → find the charge → Report a
+        problem.
+      </p>
+
+      <h2>Intellectual property</h2>
+      <p>
+        All content within the App — including motivational quotes, design,
+        graphics, and code — is owned by or licensed to us and protected by
+        applicable intellectual property laws. You may not reproduce or
+        redistribute any content from the App without our prior written consent.
+      </p>
+      <p>
+        Quote content is curated and may include works that are in the public
+        domain or used under licence.
+      </p>
+
+      <h2>Third-party services</h2>
+      <p>The App uses the following third-party services:</p>
+      <p>
+        <strong>Google AdMob</strong> — provides advertising in the free version
+        of the App. AdMob is subject to
+        <a href="https://policies.google.com/privacy" target="_blank"
+          >Google's Privacy Policy</a
+        >.<br /><br />
+        <strong>Apple App Store / Google Play</strong> — handle all subscription
+        billing and purchase verification.<br /><br />
+        <strong>Our quote API</strong> — serves quote content from our own
+        backend. No personally identifiable information is sent to this service.
+      </p>
+      <p>
+        We are not responsible for the privacy practices or content of any
+        third-party services.
+      </p>
+
+      <h2>Privacy</h2>
+      <p>
+        Your use of the App is also governed by our
+        <a href="privacy.html">Privacy Policy</a>, which is incorporated into
+        these Terms by reference. In short: we do not collect personal
+        information, and almost all data stays on your device.
+      </p>
+
+      <h2>Disclaimers</h2>
+      <p>
+        The App and its content are provided <strong>"as is"</strong> without
+        warranties of any kind, express or implied. We do not warrant that the
+        App will be uninterrupted, error-free, or free of viruses or other
+        harmful components.
+      </p>
+      <p>
+        The motivational content in this App is for general wellbeing purposes
+        only and is not a substitute for professional medical, psychological, or
+        other advice.
+      </p>
+
+      <h2>Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by law, we shall not be liable for any
+        indirect, incidental, special, consequential, or punitive damages
+        arising from your use of — or inability to use — the App, even if we
+        have been advised of the possibility of such damages.
+      </p>
+      <p>
+        Our total liability to you for any claim arising out of or relating to
+        these Terms or the App shall not exceed the amount you paid us in the
+        twelve months preceding the claim, or NZD $10, whichever is greater.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These Terms are governed by the laws of <strong>New Zealand</strong>,
+        without regard to its conflict of law provisions. Any disputes shall be
+        resolved in the courts of New Zealand, except where local consumer
+        protection laws in your jurisdiction provide otherwise.
+      </p>
+
+      <h2>Changes to these terms</h2>
+      <p>
+        We may update these Terms from time to time. We will notify you of
+        material changes by updating the date at the top of this page. Continued
+        use of the App after changes are posted constitutes acceptance of the
+        revised Terms.
+      </p>
+
+      <h2>Termination</h2>
+      <p>
+        We reserve the right to suspend or terminate your access to the App at
+        our discretion, without notice, if you violate these Terms or for any
+        other reason. Upon termination, your right to use the App ceases
+        immediately.
+      </p>
+
+      <h2>Contact</h2>
+      <div class="contact-block">
+        <p>If you have any questions about these Terms, please get in touch.</p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:hello@veilmomentsapp.com">hello@veilmomentsapp.com</a>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 Veil Moments &nbsp;·&nbsp;
+        <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="support.html">Support</a>
+      </p>
+    </footer>
+  </body>
+</html>

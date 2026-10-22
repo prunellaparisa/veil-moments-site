@@ -264,6 +264,82 @@
       }
 
       /* ── Responsive ── */
+      /* ── Try it: mood check-in + live quote ── */
+      @property --wash {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: #f4ece4;
+      }
+
+      .try {
+        max-width: 440px;
+        margin: 0 auto 36px;
+      }
+
+      .try-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        margin-bottom: 12px;
+      }
+
+      .moods {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 0;
+      }
+
+      .mood {
+        flex: 1;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.8px;
+        color: var(--ink-light);
+        background: transparent;
+        border: 0.5px solid var(--hairline);
+        padding: 10px 0;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s, border-color 0.3s;
+      }
+
+      .mood[aria-pressed="true"] {
+        background: var(--blush);
+        border-color: var(--rose);
+        color: var(--rose-dark);
+      }
+
+      .moment {
+        min-height: 168px;
+        padding: 28px 24px 24px;
+        border: 0.5px solid var(--hairline);
+        border-top: none;
+        background: linear-gradient(180deg, var(--wash), var(--parchment) 85%);
+        transition: --wash 0.9s;
+        text-align: left;
+      }
+
+      .moment-quote {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 1.55;
+        color: var(--ink-dark);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .moment-quote.leaving {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .moment-quote {
+          transition: none;
+        }
+      }
+
       @media (max-width: 520px) {
         main {
           padding: 36px 20px 64px;
@@ -289,6 +365,18 @@
           feeling and receive a quote matched to your mood — delivered gently at the
           rhythm of your day.
         </p>
+
+        <div class="try">
+          <p class="try-label">Try it · how are you feeling?</p>
+          <div class="moods" role="group" aria-label="Pick a mood">
+            <button class="mood" data-mood="struggling" aria-pressed="false">struggling</button>
+            <button class="mood" data-mood="neutral" aria-pressed="true">okay</button>
+            <button class="mood" data-mood="thriving" aria-pressed="false">thriving</button>
+          </div>
+          <div class="moment" aria-live="polite">
+            <p class="moment-quote">“Most of life happens somewhere in the middle. The middle is a fine place to be.”</p>
+          </div>
+        </div>
 
         <div class="download-group">
           <a
@@ -418,5 +506,72 @@
         <a href="support.html">Support</a>
       </p>
     </footer>
+    <script>
+      // A small taste of the app: pick a mood and a matching quote fades in,
+      // then another every few seconds. Quotes are from the app's library.
+      (function () {
+        var quotes = {
+          struggling: [
+            "Let someone in. Hard things get heavier when you carry them alone.",
+            "You'd never say this to a friend. Try saying what they'd say to you instead.",
+            "Feelings move through you like weather. They pass, and you're still here when they do.",
+            "I'm not behind. I'm at the beginning, and that's a fine place to be.",
+          ],
+          neutral: [
+            "Most of life happens somewhere in the middle. The middle is a fine place to be.",
+            "Even an ordinary day has a bit of purpose running through it.",
+            "Steadiness rarely gets noticed, but it's what holds everything else up.",
+            "Company that asks nothing of you is a real gift.",
+          ],
+          thriving: [
+            "Confidence like this is worth spending. Put it toward something real.",
+            "Enjoy the easy miles. You earned them on the hard ones.",
+            "Say the proud thing out loud at least once today.",
+            "Let this clarity remind you why you started.",
+          ],
+        };
+        var washes = { struggling: "#ecebe8", neutral: "#f4ece4", thriving: "#f6e1d4" };
+        var buttons = document.querySelectorAll(".mood");
+        var box = document.querySelector(".moment");
+        var el = document.querySelector(".moment-quote");
+        var mood = "neutral";
+        var index = 0;
+        var timer;
+
+        function show(text) {
+          el.classList.add("leaving");
+          setTimeout(function () {
+            el.textContent = "\u201c" + text + "\u201d";
+            el.classList.remove("leaving");
+          }, 450);
+        }
+
+        function next() {
+          index = (index + 1) % quotes[mood].length;
+          show(quotes[mood][index]);
+        }
+
+        function start() {
+          clearInterval(timer);
+          timer = setInterval(next, 7000);
+        }
+
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            if (btn.dataset.mood === mood) return;
+            mood = btn.dataset.mood;
+            index = 0;
+            buttons.forEach(function (b) {
+              b.setAttribute("aria-pressed", String(b === btn));
+            });
+            box.style.setProperty("--wash", washes[mood]);
+            show(quotes[mood][0]);
+            start();
+          });
+        });
+
+        start();
+      })();
+    </script>
   </body>
 </html>
